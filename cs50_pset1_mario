@@ -30,8 +30,8 @@ void pyramid(int n)
             {
                 printf(" ");
             }
-            else 
-            { 
+            else
+            {
                 printf("#");
             }
         }
@@ -43,10 +43,6 @@ void pyramid(int n)
             if (k <= i)
             {
                 printf("#");
-            }
-            else
-            {
-                printf(" ");
             }
         }
         //start a new line after finished a row
