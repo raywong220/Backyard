@@ -27,8 +27,6 @@ int main(void)
 
     //calculate the Coleman-Liau index and print the grade level
     printIndex(letterCount, wordCount, sentenceCount);
-
-
 }
 
 int count_letters(char *text)
@@ -51,13 +49,10 @@ int count_words(char *text)
     for (int i = 0, length = strlen(text), flag = 0; i < length; i++)
     {
         //only if the character is an alphabet and the flag is off, new word will be counted.
-        if (isalpha(text[i]))
+        if (isalpha(text[i]) && flag == 0)
         {
-            if (flag == 0)
-            {
                 word_count++;
                 flag = 1;
-            }
         }
         //reset the flag when the current character is a space.
         else if (isblank(text[i]))
@@ -72,7 +67,7 @@ int count_words(char *text)
 int count_sentences(char *text)
 {
     int sentence_count = 0;
-    //when a full stop or an exclamation mark or  a question mark is detected, the sentence will be perceived as end.
+    //when a full stop or an exclamation mark or  a question mark is detected, the sentence will be perceived as ended.
     for (int i = 0, length = strlen(text); i < length; i++)
     {
         if (text[i] == '.' || text[i] == '!' || text[i] == '?')
@@ -101,3 +96,4 @@ void printIndex(int letter, int word, int sentence)
     }
     printf("\n");
 }
+
